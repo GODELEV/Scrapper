@@ -61,7 +61,7 @@ Expanded keywords: ['cats in hats', 'A photo of cats in hats', ...]
 Choose Hugging Face dataset source:
   1. conceptual_captions
   2. laion/laion400m
-  3. unsplash-lite
+  3. unsplash-dataset
 Enter number (1-3): 2
 How many images do you want? 50
 Choose image size/quality:
@@ -83,6 +83,18 @@ Uploading to Hugging Face Datasets Hub...
 Uploaded! View at: https://huggingface.co/datasets/godelev/cats-in-hats-v1
 All done! Dataset saved to: my-cats-dataset
 ```
+
+## Typical Time Estimates
+
+| Images Requested | Filtering Only | Filtering + Downloading | + BLIP Captioning |
+|------------------|---------------|-------------------------|-------------------|
+| 10               | < 1 min       | 1-2 min                 | 2-5 min           |
+| 100              | 1-3 min       | 3-10 min                | 10-30 min         |
+| 1000             | 5-20 min      | 20-60+ min              | 1-2+ hours        |
+
+- **Filtering**: Fast if keywords are common, slow if rare.
+- **Downloading**: Each image can take 0.5–2 seconds (network dependent).
+- **BLIP Captioning**: Slowest step if enabled, especially on CPU.
 
 ## Author
 - GitHub: [GODELEV](https://github.com/GODELEV)
